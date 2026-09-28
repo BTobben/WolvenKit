@@ -298,6 +298,10 @@ public partial class AssetBrowserViewModel : ToolViewModel
     }
 
 
+    public AssetRelationService CreateAssetRelationService() => new(_archiveManager, _pluginService);
+
+    public void OpenRelatedAsset(IGameFile file) => _appViewModel.OpenRedFileCommand.SafeExecute(file);
+
     [RelayCommand]
     private async Task FindUsing()
     {
