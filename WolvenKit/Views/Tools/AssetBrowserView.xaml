@@ -461,6 +461,8 @@
 
                                     <Separator />
 
+                                    <MenuItem Header="Explore asset relationships" Click="OnExploreAssetRelationships" />
+
                                     <MenuItem
                                         x:Name="RightContextMenuFindUsesMenuItem"
                                         Header="Find used files">

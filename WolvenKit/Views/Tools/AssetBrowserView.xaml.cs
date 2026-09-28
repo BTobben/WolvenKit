@@ -122,6 +122,17 @@ namespace WolvenKit.Views.Tools
         }
 
 
+        private void OnExploreAssetRelationships(object sender, RoutedEventArgs e)
+        {
+            if (ViewModel?.RightSelectedItem is not RedFileViewModel file)
+            {
+                return;
+            }
+            var window = new AssetRelationsWindow(file.GetGameFile(), ViewModel.CreateAssetRelationService(),
+                ViewModel.OpenRelatedAsset) { Owner = Window.GetWindow(this) };
+            window.Show();
+        }
+
         #region Methods
 
         private bool FilterNodes(object o) => o is RedFileSystemModel data && data.Name.Contains(_currentFolderQuery);
